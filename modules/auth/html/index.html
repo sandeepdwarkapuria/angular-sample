@@ -1,0 +1,58 @@
+<div class="slider">
+    <img src="public/img/login.png" img-loader />
+</div>
+<div class="container-wrap">
+    <div class="donor_login_form">
+        <div class="container">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 login_form">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 inner_login">
+                    <div class="cust-login">
+                        <span class="cust-login-title">I Am A Registered Donor</span>
+
+                        <form class="validation" name="loginForm" id="loginform" ng-submit="signIn(loginForm.$valid,$event)" novalidate >
+                            <div style="color: red;">{{ message }}</div>
+                            <p class="login-username"  ng-class="{ 'has-error' : (loginForm.username_or_email.$invalid && loginForm.$submitted) }">
+                                <label for="user_login">Username or E-mail</label>
+                                <input type="text" name="username_or_email" id="user_login" ng-model="login.username_or_email" class="input" required size="20">
+                                <span class="error" ng-show="loginForm.username_or_email.$error.required">Username or E-mail is required.</span>
+                            </p>
+                            <p class="login-password" ng-class="{ 'has-error' : (loginForm.password.$invalid && loginForm.$submitted) }">
+                                <label for="user_pass">Password</label>
+                                <input type="password" name="password" id="user_pass" class="input" ng-model="login.password" required  size="20">
+                                <span class="error" ng-show="loginForm.password.$error.required">Password is required.</span>
+                            </p>
+                            <p class="forgot_text">
+                                <a href="#">Forgot Your password?</a>
+                            </p>
+                            <p class="login-remember">
+                                <label>
+                                    <input name="rememberme" type="checkbox" id="rememberme" value="forever" ng-model="login.remember"> Remember
+                                    Me</label>
+                            </p>
+                            <p class="login-submit">
+                                <input type="submit" name="wp-submit" id="wp-submit" class="button-primary"
+                                       value="Log In">
+
+                            </p>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 newregister">
+                    <div class="login-right-r-main">
+                        <h1>Please Register Me as a Donor</h1>
+                        <h2>As a registered donor</h2>
+                        <h2>I can:</h2>
+                        <ul style="list-style: none;">
+                            <li>Give donations</li>
+                            <li>Get updates on latest activities</li>
+                        </ul>
+                        <div id="btn-r" style="margin-top: 38px;">
+                            <a class="login-right-r-button" ui-sref="default.register">Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

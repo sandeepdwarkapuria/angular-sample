@@ -1,0 +1,142 @@
+<!-- Overlay -->
+<div class="container-wrap" style="opacity: 1;">
+    <div class="container main-content">
+        <div class="row">
+            <div class="col span_12 section-title blog-title">
+                <h1 class="entry-title sec_text">{{ staff.suffix +' '+ staff.english_name}}</h1>
+            </div>
+            <!--/section-title-->
+        </div>
+        <!--/row-->
+
+        <div class="row">
+            <!--<p style="text-align:center;margin-bottom:10px;"><strong>We apologise that our system is unable to accept online donations currently. Please <a href="http://navigators.org.sg/contact-us/contact/">Contact us</a> for giving options. Thank you.</strong></p>-->
+            <div class="col span_9" id="post-area">
+                <article class="post-3084 tshowcase type-tshowcase status-publish has-post-thumbnail hentry"
+                         id="post-3084">
+                    <div class="post-content">
+                        <div class="content-inner staff_in"> <span class="post-featured-img">
+                        <img title="" alt="" class="attachment-full wp-post-image"
+                            ng-src="{{ 'public/img/test_image.jpeg' }}"> </span>
+                            <div class="tshowcase-vcard">
+                                <div class="tshowcase-vcard-right newcolor">
+                                    <div class="full" ng-bind-html="trustAsHtml(staff.description)"></div>
+
+                                    <p style="text-align: justify;"> Nationality : {{  staff.natonality }}</p>
+                                    <p style="text-align: justify;"> Experience :{{  staff.experience }} </p>
+                                    <p style="text-align: justify;">Mobile : {{ staff.mobile_no }}</p>
+                                    <p style="text-align: justify;"> Email : <a ng-href="{{ 'mailto:'+ staff.email_id }}">{{  staff.email_id }} </a></p>
+                                </div>
+                                <div class="total_donation">
+                                    <div class="staffbottom">
+                                        <div class="donationform">
+
+                                            <div class="gf_browser_chrome gform_wrapper" id="gform_wrapper_1" style="">
+                                                <form name="donations" class="validation" method="post" enctype="multipart/form-data" action="donations" >
+                                                    <div class="gform_body">
+                                                        <ul id="gform_fields_1"  class="gform_fields top_label form_sublabel_below description_below">
+                                                            <li id="field_1_20" class="gfield pm_html_block gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below field_description_below"></li>
+                                                            <li id="field_1_21" class="gfield populate-posts8 min_pjct_radio gfield_contains_required field_sublabel_below field_description_below">
+                                                                <label class="gfield_label"> </label>
+                                                                 <input type="hidden" name="model_id" data-ng-value="{{ staff.id }}" class="gform_hidden" id="input_21_1">
+                                                                <input type="hidden" name="model" value="ngo" class="gform_hidden" id="input_21_1">
+                                                            </li>
+                                                            <li id="field_1_2"
+                                                                class="gfield populate-posts2 gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below field_description_below">
+                                                                Donation Amount
+                                                            </li>
+                                                            <li id="field_1_3"
+                                                                class="gfield populate-posts3 field_sublabel_below field_description_below">
+                                                                <label class="gfield_label">SGD</label>
+                                                                <div class="ginput_container ginput_container_radio">
+                                                                    <ul class="gfield_radio" id="input_1_3">
+                                                                        <li class="gchoice_1_3_0">
+                                                                            <input  type="radio"  ng-value="100" ng-model="amount" name="amount" id="choice_1_3_0" tabindex="1">
+                                                                            <label for="choice_1_3_0" id="label_1_3_0">100.00</label>
+                                                                        </li>
+                                                                        <li class="gchoice_1_3_1">
+                                                                            <input  type="radio" ng-value="250" ng-model="amount" name="amount" id="choice_1_3_1" tabindex="2">
+                                                                            <label for="choice_1_3_1" id="label_1_3_1">250.00</label>
+                                                                        </li>
+                                                                        <li class="gchoice_1_3_2">
+                                                                            <input  type="radio" ng-value="500" id="choice_1_3_2" data-ng-model="amount" name="amount" tabindex="3">
+                                                                            <label for="choice_1_3_2" id="label_1_3_2">500.00</label>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+                                                            <li id="field_1_25" class="gfield populate-posts6 gfield_price gfield_price_1_25 gfield_product_1_25 gfield_contains_required field_sublabel_below field_description_below">
+                                                                <label class="gfield_label" for="input_1_25">SGD<span
+                                                                        class="gfield_required">*</span></label>
+                                                                <div class="ginput_container ginput_container_product_price">
+                                                                    <input name="amount" id="input_1_25" type="number" value="" data-ng-model="amount"  class="medium ginput_amount"
+                                                                           placeholder="Or enter amount"
+                                                                           aria-required="true" aria-invalid="false" required>
+                                                                    <span class="error" ng-show="donations.amount.$error.required">Amount is required</span>
+                                                                </div>
+                                                            </li>
+                                                            <li id="field_1_4" class="gfield populate-posts4 field_sublabel_below field_description_below">
+                                                                <label class="gfield_label">Recurring Donate</label>
+                                                                <div class="ginput_container ginput_container_checkbox">
+                                                                    <ul class="gfield_checkbox" id="input_1_4">
+                                                                        <li class="gchoice_1_4_1">
+                                                                            <input name="is_recurring" type="checkbox" value="m" id="choice_1_4_1" tabindex="5">
+                                                                            <label for="choice_1_4_1" id="label_1_4_1">I  would like to make a monthly contribution</label>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+                                                            <li id="field_1_5" class="gfield populate-posts5 field_sublabel_below field_description_below">
+                                                                <label class="gfield_label">Anonymous donation? (optional)</label>
+                                                                <div class="ginput_container ginput_container_checkbox">
+                                                                    <ul class="gfield_checkbox" id="input_1_5">
+                                                                        <li class="gchoice_1_5_1">
+                                                                            <input name="is_hidden_name" type="checkbox" value="1" id="choice_1_5_1" tabindex="6">
+                                                                            <label for="choice_1_5_1" id="label_1_5_1">Check this box to hide your name from the staff recipient.</label>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+                                                            <div class="gform_footer top_label">
+                                                                <input type="submit" id="gform_submit_button_1" class="gform_button button morebtn" value="Confirm donation →"  tabindex="7"  >
+                                                            </div>
+                                                        </ul>
+                                                    </div>
+
+                                                </form>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="donationformright">
+                                        <div class="right_img">
+                                            <img src="http://navigators.org.sg/wp-content/uploads/2016/03/Picture21-1.jpg">
+                                        </div>
+
+                                        <div class="rht_cont">
+                                            "Each one must give as he has decided in his heart, not reluctantly or under
+                                            compulsion, for God loves a cheerful giver."<p class="two-core"> - 2 Cor
+                                            9:7</p></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="ts-clear-both"></div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <!--/content-inner-->
+
+
+        </div>
+        <!--/post-content-->
+
+        <!--/article-->
+
+    </div>
+    <!--/span_9-->
+
+</div>
+

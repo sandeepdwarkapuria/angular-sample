@@ -1,0 +1,28 @@
+<!-- Overlay -->
+<div class="slider">
+	<img src="public/img/giving.png">
+</div>
+
+<div class="main_padng">
+	<div class="container">
+	<h1 class="page_title">Latest Events</h1>
+    <div class="evnt_list row">
+    	<ul>       	
+        	<li class="col-md-4" ng-repeat="event in events">
+            	<div class="evntbox ">
+                	<div class="evnt_top">
+                    	<h2 class="event_title" ng-bind="event.title"></h2>
+                    </div>
+                    <div class="evnt_main">
+                        <h3 class="event_desc" ng-bind-html="trustAsHtml(event.description)"></h3>
+                    </div>
+					<div class="buttons">
+						<a class="gift_button fancybox sign-link morebtn view_more" ui-sref="default.eventView({'eventId' : event.id })">View More</a>
+						<a class="gift_button fancybox sign-link morebtn" ui-sref="default.eventRegister({'eventId' : event.id })">Register</a>
+					</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+	</div>   
+</div>
