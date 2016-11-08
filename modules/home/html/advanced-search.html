@@ -1,0 +1,23 @@
+<div class="slider">
+    <img src="public/img/giving.png">
+</div>
+<div class="conatiner">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="box-table">
+            <table ng-table="tableParams" ng-show="$data.length > 0">
+                <tr ng-repeat="ngo in $data">
+                    <td class="user-photo" data-title="'Photo'"><img class="user-tumb" src="public/img/test_image.jpeg"></td>
+                    <td data-title="'Name'" sortable="'english_name'">{{ ngo.suffix +' '+ ngo.english_name }}</td>
+                    <td data-title="'Email'" sortable="'email_id'">{{ ngo.email_id }}</td>
+                    <td data-title="'Phone'" sortable="'mobile_no'">{{ ngo.mobile_no }}</td>
+                    <td data-title="'Donate'">
+
+                        <a class="gift_button fancybox morebtn" ui-sref="default.ngoDonation({ team : ngo.id })" >GIFT</a>
+                    </td>
+
+                </tr>
+            </table>
+            <div ng-show="tableParams.data.length == 0">No Data Found  <a ui-sref="default.home"> Back To Home </a></div>
+        </div>
+    </div>
+</div>

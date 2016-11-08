@@ -1,0 +1,66 @@
+
+<!-- Overlay -->
+<div class="slider">
+        <img src="public/img/giving.png" img-loader />
+</div>
+
+<div class="col span_12 dark left">
+    <div class="vc_span12 wpb_column column_container col no-extra-padding instance-1" data-hover-bg=""
+         data-animation="" data-delay="0">
+        <div class="wpb_wrapper">
+            <div class="container">
+                <div class="wpb_text_column wpb_content_element ">
+                    <div class="wpb_wrapper">
+                        <ul id="ng-pager">
+                            <li class="" ng-repeat="(key,staff) in staffs" ng-class="{ 'break-line' : key % 5 == 0 }" >
+                               <a href="#scroll-team-description" du-smooth-scroll ng-click="setStaff(staff)"> <div class="team-member" id="team-member-{{staff.id}}">
+                                    <div class="team-photo">
+                                        <img ng-src="{{ 'public/img/staff/' + staff.image }}" class="bw-img team-member-img img-3084"
+                                             id="bw-team-{{ staff.id}}">
+
+                                    </div>
+                                    <h2>{{ staff.name}}</h2>
+                                </div>
+                               </a>
+                            </li>
+                        </ul>
+
+                        <div class="team-description team-details" id="scroll-team-description" ng-hide="selectedStaff == null">
+                            <div class="team-row">
+                                <div class="team_bigimg">
+                                    <img
+                                        ng-src="{{ 'public/img/staff/' + selectedStaff.image }}"
+                                        class="team-member-imga " id="scroll-team-3084"></div>
+                                <div class="desc">
+                                    <a class="arrow arrow-left"  href="javascript:void(0)" ng-click="prevStaff()">Previous</a>
+                                    <div class="post-title"> {{ selectedStaff.name }} </div>
+                                    <div class="post-content" ng-bind-html="trustAsHtml(selectedStaff.description)">   </div>
+                                    <a class="arrow arrow-right"  href="javascript:void(0)" ng-click="nextStaff()">Next</a>
+
+                                    <div>
+                                        <a  class="gift_button fancybox morebtn" ui-sref="default.staffDonation({ team : selectedStaff.id })"  >GIFT</a>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="wpb_wrapper">
+    <p style="text-align: center; padding-bottom:20px;"><strong>Some staff are not featured on this page for security
+        reasons. To donate to them, kindly contact </strong><a href="mailto:admin@navigators.org.sg">admin@navigators.org.sg</a>
+    </p>
+
+</div>
+
